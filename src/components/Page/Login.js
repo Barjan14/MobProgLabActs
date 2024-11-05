@@ -6,11 +6,12 @@ const Login = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+   
 
   const handleLogin = () => {
     if (username === 'user' && password === 'password') {
       Alert.alert('Login successful!');
-      navigation.navigate('Home'); // Navigate to Home after login
+      navigation.navigate('Home'); 
     } else {
       Alert.alert('Invalid username or password');
     }
@@ -30,6 +31,8 @@ const Login = ({ navigation }) => {
         mode="outlined"
         placeholder="example@gmail.com"
         autoCapitalize="none"
+        placeholderTextColor="#000"
+        textColor="#000"            
       />
       <TextInput
         label="Password"
@@ -39,6 +42,8 @@ const Login = ({ navigation }) => {
         mode="outlined"
         placeholder="Enter Your Password"
         secureTextEntry
+         placeholderTextColor="#000"
+         textColor="#000"   
         right={<TextInput.Icon name="eye" />}
       />
       <Button mode="contained" onPress={handleLogin} style={styles.loginButton} labelStyle={{ color: '#ffffff' }}>
@@ -52,6 +57,7 @@ const Login = ({ navigation }) => {
       </View>
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({
@@ -90,5 +96,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
 export default Login;

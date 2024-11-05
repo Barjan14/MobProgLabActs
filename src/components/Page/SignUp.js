@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image, Alert } from 'react-native';
 import { TextInput, Button, Title } from 'react-native-paper';
 
-// Import the local image
+
 const logo = require('../../assets/Images/logo2.png');
 
 const SignUp = ({ navigation }) => {
@@ -14,7 +14,7 @@ const SignUp = ({ navigation }) => {
   const handleSignUp = () => {
     if (username && email && phone && password) {
       Alert.alert('Sign up successful!');
-      navigation.navigate('Login'); // Navigate back to Login after sign-up
+      navigation.navigate('Login'); 
     } else {
       Alert.alert('Please fill in all fields');
     }
@@ -22,17 +22,17 @@ const SignUp = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Logo */}
+      {}
       <Image
-        source={logo} // Using the local logo image
+        source={logo}
         style={styles.logo}
       />
 
-      {/* Title and Subtitle */}
+    
       <Title style={styles.title}>Create an account</Title>
       <Text style={styles.subtitle}>Connect with your friends today!</Text>
 
-      {/* Username Input */}
+     
       <TextInput
         label="Username"
         value={username}
@@ -41,9 +41,11 @@ const SignUp = ({ navigation }) => {
         mode="outlined"
         placeholder="Enter Your Username"
         autoCapitalize="none"
+        placeholderTextColor="#000" 
+        textColor="#000"            
       />
 
-      {/* Email Input */}
+      
       <TextInput
         label="Email"
         value={email}
@@ -53,9 +55,11 @@ const SignUp = ({ navigation }) => {
         placeholder="Enter Your Email"
         keyboardType="email-address"
         autoCapitalize="none"
+        placeholderTextColor="#000" 
+        textColor="#000"            
       />
 
-      {/* Phone Number Input */}
+     
       <TextInput
         label="Phone Number"
         value={phone}
@@ -64,9 +68,11 @@ const SignUp = ({ navigation }) => {
         mode="outlined"
         placeholder="Enter Your Phone Number"
         keyboardType="phone-pad"
+        placeholderTextColor="#000" 
+        textColor="#000"            
       />
 
-      {/* Password Input */}
+      
       <TextInput
         label="Password"
         value={password}
@@ -75,16 +81,18 @@ const SignUp = ({ navigation }) => {
         mode="outlined"
         placeholder="Enter Your Password"
         secureTextEntry
+        placeholderTextColor="#000" 
+        textColor="#000"            
         right={<TextInput.Icon name="eye" />}
       />
 
-      {/* Sign Up Button */}
+      
       <Button mode="contained" onPress={handleSignUp} style={styles.signUpButton}labelStyle={{ color: '#ffffff' }}>
       Sign Up
      </Button>
 
 
-      {/* Already have an account? Login */}
+      
       <View style={styles.loginContainer}>
         <Text style={styles.loginText}>Already have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
@@ -101,7 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#ffffff', // White background
+    backgroundColor: '#ffffff', 
   },
   logo: {
     width: 150,
@@ -112,25 +120,24 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333', // Dark text color for readability
-    textAlign: 'center',
+    color: '#333333', 
     marginBottom: 5,
   },
   subtitle: {
     fontSize: 14,
-    color: '#666666', // Light gray color for subtitle
+    color: '#666666', 
     textAlign: 'center',
     marginBottom: 20,
   },
   input: {
     width: '100%',
     marginBottom: 15,
-    backgroundColor: '#f7f7f7', // Light gray background for input fields
+    backgroundColor: '#f7f7f7', 
   },
   signUpButton: {
     width: '100%',
-    backgroundColor: '#000000', // Black background for the button
-    color: '#ffffff', // White text color
+    backgroundColor: '#000000', 
+    color: '#ffffff', 
     marginTop: 10,
   },
   loginContainer: {
@@ -138,12 +145,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   loginText: {
-    color: '#666666', // Light gray color for "Already have an account?"
+    color: '#666666', 
   },
   loginLink: {
-    color: '#0b3c5d', // Dark blue for "Login" link
+    color: '#0b3c5d', 
     fontWeight: 'bold',
   },
 });
+
 
 export default SignUp;

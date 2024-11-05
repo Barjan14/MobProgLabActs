@@ -1,21 +1,12 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from './screens/Login';
-import PageOne from './screens/PageOne';
-
-const Stack = createStackNavigator();
-
+import { Provider as PaperProvider } from 'react-native-paper';
+import Navigation from './src/components/Panel/Navigation';
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={PageOne} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PaperProvider>
+      <Navigation/>
+    </PaperProvider>
   );
 };
 
 export default App;
-
