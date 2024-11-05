@@ -1,44 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import React, { useState } from 'react';
-import DarkMode from './src/components/Panels/DarkModePanel';
-import UserPage from './src/components/Page/UserPage';
-import { View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from './screens/Login';
+import PageOne from './screens/PageOne';
 
-export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const Stack = createStackNavigator();
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-      <View style={styles.smallButtonContainer}>
-        <DarkMode isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-        </View>
-        <UserPage isDarkMode={isDarkMode} />
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={PageOne} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-const styles = {
-  container: {
-    flex: 1,
-    marginBottom: -20,
-  },
- 
-  smallButtonContainer: {
-    // Container for the small button
-    width: 120,  // Width of the small button container
-    height: 50,  // Height of the small button container
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: -5, // Spacing between button and the next component
-  },
-
-
 };
+
+export default App;
+

@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import React from 'react';
 
-const { width, height } = Dimensions.get('window'); // Get the screen width for responsive sizing
+const { width, height } = Dimensions.get('window'); 
 
-const Notifications = () => {
+const ManageProfile = () => {
   return (
     <View style={styles.container}>
       <View style={styles.flexContainer}>
-        <Image source={require('../../assets/Images/notification.png')} style={styles.icon}/>
-        <Text style={styles.text}>𝐍𝐨𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧</Text>
+        <Image source={require('../../assets/Images/managesprofile.png')} style={styles.icon}/>
+        <Text style={styles.text}>𝐌𝐚𝐧𝐚𝐠𝐞 𝐏𝐫𝐨𝐟𝐢𝐥𝐞</Text>
         <Image source={require('../../assets/Images/go.png')} style={styles.goIcon}/>
       </View>
     </View>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   flexContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',  // Ensure space between items
+    justifyContent: 'space-between',  
     alignItems: 'center',
     padding: 20,
     backgroundColor: '#EEE'
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Notifications;
+export default ManageProfile;

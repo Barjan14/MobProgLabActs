@@ -9,9 +9,9 @@ const ProfileText = () => {
   fontWeight: 'bold', 
   paddingBottom: 15, 
   color: '#FFFFFF', 
-  width: '100%',          // Makes the text container fill the entire width
-  textAlign: 'center',    // Centers the text within the full-width container
-  letterSpacing: 2        // Adds spacing between characters for a more expanded look
+  width: '100%',          
+  textAlign: 'center',   
+  letterSpacing: 2        
 }}>
   Profile
 </Text>

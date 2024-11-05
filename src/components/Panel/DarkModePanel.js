@@ -10,16 +10,16 @@ const DarkMode = ({ isDarkMode, toggleDarkMode }) => {
         style={[styles.flexContainer, isDarkMode ? styles.darkButton : styles.lightButton]} 
         onPress={toggleDarkMode}
       >
-        {/* Change image based on isDarkMode prop */}
+        {}
         <Image 
           source={
             isDarkMode 
-              ? require('../../assets/Images/light.png') // Image for light mode
-              : require('../../assets/Images/darkmode.png') // Image for dark mode
+              ? require('../../assets/Images/light.png') 
+              : require('../../assets/Images/darkmode.png') 
           } 
           style={styles.icon} 
         />
-        {/* Conditional text based on the current mode */}
+        {}
         <Text style={[styles.text, isDarkMode ? styles.lightText : styles.darkText]}>
           {isDarkMode ? 'Light Mode' : 'Dark Mode'}
         </Text>
@@ -30,7 +30,7 @@ const DarkMode = ({ isDarkMode, toggleDarkMode }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: width * 0.4, // Adjusted container width for a smaller button
+    width: width * 0.4, 
     height: height * 0.08,
     overflow: 'hidden',
     borderRadius: 10,
@@ -48,16 +48,16 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   lightText: {
-    color: '#FFF', // Light mode text color
+    color: '#FFF', 
   },
   darkText: {
-    color: '#000', // Dark mode text color (changed to white for better contrast)
+    color: '#000', 
   },
   darkButton: {
-    backgroundColor: '#333', // Dark button background for dark mode
+    backgroundColor: '#333',
   },
   lightButton: {
-    backgroundColor: '#FFF', // Light button background for light mode
+    backgroundColor: '#FFF', 
   },
   icon: {
     height: 30,
